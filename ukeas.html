@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UKEAS | Boarding School 2017</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* color:#ddd; */
+            list-style: none;
+        }
+
+        body {
+            background-color: #02214e;
+        }
+
+        .logo {
+            background-color: #02214e;
+            text-align: center;
+            position: relative;
+        }
+
+        .navbar {
+            background-color: #02214e;
+            text-align: center;
+            margin-bottom: 0 !important;
+        }
+
+        .navbar-nav {
+            /* background-color: red; */
+            /* text-align:center; */
+            margin: 0 auto;
+        }
+
+        .online {
+            position: absolute;
+            background-color: #a68663;
+            /* position: absolute; */
+            display: inline-block;
+            /* border-radius: 2px; */
+            /* padding: 7px 10px; */
+            /* text-decoration: none; */
+            color: #fff;
+            right: 30px;
+            top: 15px;
+        }
+
+        .online:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #slider img {
+            width: 100%;
+        }
+
+        #register {
+            /* height: 290px; */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .register-pic {
+            height: 300px; 
+            width: 100%;
+            background: url(img/sw.jpg) center -180px no-repeat;
+            /* background-attachment: fixed; */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            color: #fff;
+            background-color: rgba(2, 33, 78, 0.82);
+            text-align: right;
+            padding: 10% 15% 0 0;
+        }
+
+        #register img {
+            width: 100%;
+        }
+
+        #usuk {
+            font-size: 0;
+            text-align: center;
+        }
+
+        #usuk div {
+            display: inline-block;
+            height: 450px;
+            /* background-color:#02214e; */
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        #usuk div:first-child {
+            background-color: white;
+            background: url(img/uk-map.png) 80% bottom no-repeat;
+        }
+
+        #usuk div:nth-child(2) {
+            background-color: white;
+            background: url(img/us-map.png) 80% bottom no-repeat;
+        }
+
+
+        #advantage img {
+            width: 700px;
+        }
+
+        .boarding-school {
+            width: 100%;
+            background-color: lightskyblue;
+            text-align: center;
+        }
+
+
+        .boarding-school img {
+            float: left;
+
+        }
+
+
+        #contact {
+            width: 100%;
+            /* height: 90px; */
+            background-color: #02214e;
+            /* background-color: red; */
+            background: url(./img/graduate.jpg) center center;
+            background-size: cover;
+            color: #02214e;
+        }
+
+        #contact .layout {
+            width: 100%;
+            height: 100%;
+            /* background-color:red; */
+            background-color: rgba(2, 33, 78, 0.6);
+            padding: 20px 50px;
+        }
+
+        #contact .rect {
+            width: 60%;
+            height: 100%;
+            background-color: #fff;
+
+            /* overflow: hidden; */
+            margin: 0 auto;
+            /* background: url(./img/goldflower.jpg) bottom center no-repeat; */
+            background-color: rgba(256, 256, 256, 0.85);
+            /* background-color: #a68663; */
+            /* background-color: rgba(166,134,99,0.9); */
+            border-radius: 5px;
+            padding: 12px;
+        }
+
+        #contact .rect .border {
+            /* background-color: red; */
+            border: 1.5px solid #02214e !important;
+            /* width: 90%; */
+            /* margin: 12px !important; */
+            border-radius: 5px;
+            /* margin-top: 200px !important; */
+        }
+
+
+        #contact .rect .left {
+            /* display: inline-block; */
+            width: 100%;
+            /* height: 100%; */
+            /* background-color:#a68663; */
+            padding: 20px 40px 10px 40px;
+            /* vertical-align: middle; */
+            /* background: url(./img/goldflower.jpg) bottom center no-repeat; */
+            background-size: cover;
+            color: #02214e;
+            border-bottom: 1px dashed #000;
+
+
+        }
+
+        #contact .rect .right {
+            /* display: inline-block; */
+            width: 100%;
+            /* height: 100%; */
+            /* background-color: red; */
+            /* vertical-align: middle; */
+            padding: 20px 25px;
+        }
+
+        #contact input,
+        #contact select {
+            background-color: rgba(256, 256, 256, 0.9);
+        }
+
+        #footer {
+            padding-top: 40px;
+            /* padding-bottom: 40px; */
+            height: 200px;
+            text-align: center;
+            background-color: #02214e;
+        }
+
+        #footer a {
+            color: #ddd;
+            line-height: 1.5em;
+        }
+
+        #footer div {
+            display: inline-block;
+            width: 22%;
+            height: 100%;
+            /* background-color: red; */
+            vertical-align: middle;
+            list-style-type: none;
+            padding: 0 35px;
+        }
+
+        #footer li {
+            padding: 4px 0;
+        }
+
+        label {
+            margin-bottom: 2px !important;
+            margin-left: 3px;
+        }
+
+        .form-check-label {
+            padding-left: 0 !important;
+        }
+
+        #footer ul li:first-child {
+            color: #a68663;
+            font-weight: 500;
+            border-bottom: 1px solid #a68663;
+            list-style-type: none;
+            padding: 9px 20px;
+        }
+
+        #footer ul li:nth-child(2) {
+            margin-top: 8px;
+        }
+
+        .intro {
+            width: 100%;
+            height: 500px;
+            text-align: center;
+            padding: 25px 25px;
+        }
+
+        .intro .rect {
+            width: 100%;
+            height: 100%;
+            /* border-radius: 5px; */
+            overflow: hidden;
+            /* padding:50px 0; */
+            /* background-color: red; */
+        }
+
+        .intro .pic {
+            width: 60%;
+            height: 100%;
+            background-color: red;
+            float: left;
+
+            /* border-radius: 5px; */
+        }
+
+        .intro .intro-pic1 {
+            background: url(./img/happy.jpg) center center;
+            background-size: cover;
+        }
+
+        .intro .intro-pic2 {
+            background: url(./img/certificate2.jpg) center center;
+            background-size: cover;
+        }
+
+        .intro .words {
+            position: absolute;
+            display: inline;
+            width: 40%;
+            margin-top: 6%;
+            float: left;
+            background-color: #a68663;
+            color: #02214e;
+            padding: 30px 43px 15px 43px;
+            text-align: left;
+            /* color:#ddd; */
+        }
+
+
+        .intro .words p {
+            line-height: 32px;
+        }
+
+        .intro .words {
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+
+        .intro .words h3 {
+            font-size: 28px;
+            line-height: 40px;
+            /* color:#; */
+        }
+
+        .intro .pic {
+            /* border:10px solid #a68663; */
+        }
+
+        .intro .words a {
+            color: #02214e;
+        }
+
+        .topic {
+            padding: 50px 160px 15px 160px;
+            /* text-align: justify; */
+            /* text-justify: inter-ideograph; */
+            text-align: center;
+        }
+
+        .topic .line {
+            width: 65px;
+            height: 3px;
+            display: inline-block;
+            background-color: #a68663;
+            margin: 0 auto;
+        }
+
+        .topic h2 {
+            color: #a68663;
+            text-align: center;
+        }
+
+        .topic p {
+            padding-top: 18px;
+            text-align: center;
+            color: #ddd;
+            /* background-color: #a68663; */
+            text-align: left;
+        }
+
+        #student {
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .student-card {
+            width: 27%;
+            /* height: 600px; */
+            background-color: #a68663;
+            border-radius: 5px;
+            color: #02214e;
+            display: inline-block;
+            vertical-align: center;
+        }
+
+        /* .student-card:first-child, .student-card:nth-child(2) {
+            margin-right: 5px;
+        } */
+
+        .student-card:nth-child(2),
+        .student-card:nth-child(3) {
+            margin-right: 5px;
+        }
+
+        .student-card h6 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .student-card a {
+            color: #02214e;
+        }
+
+
+        .card {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .card1 {
+            background: url(./img/student1.png) 0 -25px no-repeat;
+            background-size: cover;
+        }
+
+        .card2 {
+            background: url(./img/student2.jpg) 0 -25px no-repeat;
+            background-size: cover;
+        }
+
+        .card3 {
+            background: url(./img/student3.jpg) 0 0 no-repeat;
+            background-size: cover;
+        }
+
+        .desc {
+            padding: 20px 21px 1px 20px;
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+
+        .desc p {
+            line-height: 30px;
+        }
+
+        .angle {
+            /* position: absolute; */
+            color: #a68663;
+            display: inline-block;
+            /* background-color: red; */
+            /* width: 20px; */
+            /* height: 20px; */
+            text-align: center;
+            vertical-align: middle;
+            font-size: 40px;
+            margin: 0 10px 0 10px;
+            /* bottom: 35%; */
+            /* height: 300px; */
+            /* line-height: 100 px; */
+            /* top:calc(50% - 40px); */
+            /* vertical-align: center; */
+            margin-top: 0px;
+
+
+            /* padding-bottom: 30%; */
+        }
+
+        /* .angle i {
+            background-color: green;
+            height: 50px;
+            width: 50px;
+        } */
+
+        /* .angle:first-child {
+            margin-right:40px;
+        }
+
+        .angle:nth-child(2) {
+            margin-left:100px;
+            background-color: red;
+        } */
+
+        #activity {
+            text-align: center;
+        }
+
+        #activity .box {
+            width: 28%;
+            height: 200px;
+            display: inline-block;
+            background: red;
+        }
+
+        #video {
+            color: white;
+        }
+
+        #register .overlay {
+            padding: 20px 50px;
+        }
+
+        #register {
+            text-align: center;
+        }
+
+        .edu {
+            text-align: left;
+            width: 530px;
+            padding-top: 45px;
+            color: #ddd;
+            /* background-color:red; */
+            display: inline-block;
+            margin-right: 90px;
+
+        }
+
+        .block {
+            /* margin-top: 50px; */
+            vertical-align: center;
+            width: 250px;
+            /* height: 80%; */
+            background-color: rgba(256, 256, 256, 0.75);
+            display: inline-block;
+            margin: 0 auto;
+            list-style: none;
+            text-align: center;
+            color: #02214e;
+        }
+
+        .block li {
+            line-height: 47px;
+        }
+
+        .block ul li:first-child {
+            border-bottom: 1px solid #02214e;
+        }
+
+        .block:nth-child(2) ul {
+            background: url(./img/uk-map.png) bottom right no-repeat;
+            background-size: contain;
+        }
+
+        .block:nth-child(3) ul {
+            background: url(./img/us-map.png) bottom right no-repeat;
+            background-size: contain;
+        }
+
+        #slider {
+            height: 80vh;
+            background: url(./img/slider.jpg) center center no-repeat;
+            background-size: cover;
+            color:#fff;
+            position: relative;
+        }
+
+        #slider .words {
+            width: 500px;
+            background-color: red;
+        }
+
+        #slider .words {
+            /* height: 200px; */
+            width: 49%;
+            padding: 30px 40px;
+            position: absolute;
+            bottom:13%;
+            right:0%;
+            background-color: rgba(256, 256, 256, 0.92);
+            text-align: center;
+            color:#02214e;
+            line-height: 1.5em;
+            /* border-radius: 5px; */
+        }
+
+        .words1 {
+            width: 70%;
+            text-align: center;
+        }
+
+        #slider .words h3, #slider .words button{
+            line-height: 1.5em;
+        }
+
+        .nav-link {
+            color:#ddd !important;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <a class="navbar-brand" href="#">
+            <img src="img/ukeas_white_logo.png" alt="">
+        </a>
+        <button class="btn online" href="#">立即報名</button>
+    </div>
+
+    <nav class="navbar navbar-expand-sm navbar-dark mb-3">
+        <div class="container">
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">英國中學</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">美國中學</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">暑期課程</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">學生心得</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">為什麼要念寄宿家庭</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">所有活動</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="slider">
+        <!-- <img src="img/slider.jpg" alt=""> -->
+        <div class="words">
+                <div class="words1">
+                        <h4>03 / 12 — 03 / 16</h4>
+                                 <h3>2017 寄宿中學展覽台灣站</h3>
+                                 <!-- <button class="btn" style="background-color: #a68663; color: #fff;">立即報名</button>  -->
+                     </div> 
+        </div>
+        
+    </section>
+    <section id="video">
+
+    </section>
+    
+    <!-- <section id="usuk">
+            <div class="col-6">
+                <h2>英國</h2>
+                <ul>
+                    <li>學制介紹</li>
+                    <li>寄宿中學</li>
+                    <li>中學暑期課程</li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <h2>美國</h2>
+                <ul>
+                    <li>學制介紹</li>
+                    <li>寄宿中學</li>
+                    <li>中學暑期課程</li>
+                </ul>
+            </div>
+        </section> -->
+    <div class="topic">
+        <h2>UKEAS 寄宿中學教育中心</h2>
+        <div class="line"></div>
+        <!-- <div>
+            <p>「教育」是塑造孩子一生最重要的一環，接受如何的教育，便決定了未來思考的方式、自我管理以及個人成就發展。
+                <br> 英國以高品質教育著稱，而英國寄宿中學依照個人特質及優勢安排課程，提供完善的適性發展，保障孩子接受一流的學術教育及國際化的成長環境，為成功未來打下完美基礎。
+            </p> 
+        </div> -->
+        <!-- <iframe width="100%" height="480px" src="https://www.youtube.com/embed/JZ64tcVpqCU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  -->
+    </div>
+
+    <section class="intro">
+        <div class="rect">
+            <div class="pic intro-pic1" style="margin-right: -25px;"></div>
+            <div class="words" style="left: 730px;">
+                <h3>寄宿中學的優點</h3>
+                <p>英國寄宿中學具有一流學術教育與國際化的成長環境，在教育中給予學子多元化的啟發、提供多樣性的課程內容，尊重個人特質與潛能培養，提供孩子最完善的適性發展。在學術方面，其大學升學率高達 95%，學生畢業後多進入劍橋、牛津及英國名前二十之大學。</p>
+                <p style="text-align: right;">
+                    <a href="#">more ></a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="rect">
+            <div class="pic intro-pic2"></div>
+            <div class="words" style="left: 730px;">
+                <h3>UKEAS的服務與特色</h3>
+                <p>UKEAS 二十幾年來以最用心的服務，深獲許多申請英國中學學生的肯定與喜愛。所有 UKEAS 的顧問均有遊留學英國的經驗，除了可與您分享他們的海外體驗與心得，更能確保您在申請學校前深入了解英國需知訊息，讓子女的英國留學之路—切順利。讓我們看看
+                    UKEAS 可以提供您什麼樣的留學服務！</p>
+                <p style="text-align: right;">
+                    <a href="#">more ></a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="topic">
+            <h2>英國與美國教育</h2>
+            <div class="line"></div>
+        </div>
+    <section id="register">
+        
+            <div class="register-pic"></div>
+            <div class="overlay">
+                    
+                <div class="edu">
+                    <p>「教育」是塑造孩子一生最重要的一環，接受如何的教育，便決定了未來思考的方式、自我管理以及個人成就發展。
+                        <br>
+                        <br> 英國以高品質教育著稱，而英國寄宿中學依照個人特質及優勢安排課程，提供完善的適性發展，保障孩子接受一流的學術教育及國際化的成長環境，為成功未來打下完美基礎。
+                    </p>
+                </div>
+                <div class="block uk">
+                    <ul>
+                        <li>英國</li>
+                        <li>學制介紹</li>
+                        <li>寄宿中學</li>
+                        <li>中學暑期課程</li>
+                    </ul>
+                </div>
+                <div class="block us">
+                    <ul>
+                        <li>美國</li>
+                        <li>學制介紹</li>
+                        <li>寄宿中學</li>
+                        <li>中學暑期課程</li>
+                    </ul>
+                </div>
+            </div>
+    
+        </section>
+    <!-- <div class="topic">
+            <h2>與我們聯繫</h2>
+            <div></div>
+    </div> -->
+
+    <!-- <section id="activity">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </section> -->
+    <div class="topic">
+        <h2>學員及家長心得</h2>
+        <div class="line"></div>
+    </div>
+    <section id="student">
+        <div class="angle">
+            <i class="fas fa-chevron-circle-left"></i>
+        </div>
+        <div class="student-card">
+            <div class="card card2">
+                <!-- <img  src="./img/student1.png" alt=""> -->
+            </div>
+            <div class="desc">
+                <h6>Nat @ Ardingly College</h6>
+                <p>我是Nat的媽媽，我和我的兒子Nat非常感謝UKEAS團隊以及顧問從2015年以來為我們所做的所有事情.......</p>
+                <p style="text-align: right;">
+                    <a href="#">more ></a>
+                </p>
+            </div>
+        </div>
+
+        <div class="student-card">
+            <div class="card card1">
+                <!-- <img  src="./img/student1.png" alt=""> -->
+            </div>
+            <div class="desc">
+                <h6>YANG Meijie @ Bloxham School</h6>
+                <p>非常感謝UKEAS英國辦公室，從我十七歲第一次來到英格蘭，進入在牛津附近的私立寄宿學校......</p>
+                <p style="text-align: right;">
+                    <a href="#">more ></a>
+                </p>
+            </div>
+        </div>
+
+        <div class="student-card">
+            <div class="card card3">
+                <!-- <img  src="./img/student1.png" alt=""> -->
+            </div>
+            <div class="desc">
+                <h6>Winnie @ St Edmund's School</h6>
+                <p>我和我老公決定送我們的兒子到海外留學之前有聽聽關於英國寄宿學校的專業建議......</p>
+                <p style="text-align: right;">
+                    <a href="#">more ></a>
+                </p>
+            </div>
+        </div>
+        <div class="angle">
+            <i class="fas fa-chevron-circle-right"></i>
+        </div>
+    </section>
+
+    <div class="topic">
+        <h2>與我們聯繫</h2>
+        <div class="line"></div>
+    </div>
+    <section id="contact">
+        <div class="layout">
+
+            <div class="rect">
+                <div class="border">
+                    <div class="left">
+                        <p>
+                            大英國協教育資訊中心(UKEAS)是一家教育諮詢公司，為希望在英國就讀中學、學院和大學的國際學生提供免費與公正的諮詢及申請服務。公司在1993年成立於英國和台灣，從那時起已經協助過數千名學生赴英國求學。</p>
+                        <p style="text-align:center;">
+                            <b>
+                                我們的諮詢完全免費，
+                                <br> 在此誠摯地邀請您，
+                                <br> 讓我們UKEAS陪伴您完成您的遊留學夢。
+                            </b>
+                        </p>
+                    </div>
+                    <div class="right">
+                        <form>
+                            <div class="form-group" style="width:49.5%; float:left; margin-right: 5px">
+                                <label for="exampleFormControlInput1">姓名</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="王小明">
+                            </div>
+
+                            <div class="form-group" style="width:49.5%; float:left">
+                                <label for="exampleFormControlInput3">聯絡電話 </label>
+                                <input type="phone" class="form-control" id="exampleFormControlInput3" placeholder="0912-456-789">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlInput2">電子信箱</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">請選擇離您較近的區域</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option readonly>請選擇</option>
+                                    <option>基隆</option>
+                                    <option>台北忠孝</option>
+                                    <option>台北重慶</option>
+                                    <option>台北板橋</option>
+                                    <option>桃園</option>
+                                    <option>新竹</option>
+                                    <option>台中</option>
+                                    <option>台南</option>
+                                    <option>高雄</option>
+                                </select>
+                            </div>
+                            <div class="form-check form-check-inline" style="padding-left: 25px;">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2" style="font-size: 0.85em">訂閱UKEAS電子報，我們將會提供您重要的通知、更新、留遊學相關資訊及促銷活動。</label>
+                            </div>
+                            <center>
+                                <button type="submit" class="btn" style="background-color: #a68663; color:#fff">送出聯絡資訊</button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="footer">
+        <div>
+            <ul>
+                <li>關於寄宿中學</li>
+                <li>
+                    <a href="#">寄宿中學挑選</a>
+                </li>
+                <li>
+                    <a href="#">寄宿中學申請</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>學校與課程介紹</li>
+                <li>
+                    <a href="#">英國寄宿中學</a>
+                </li>
+                <li>
+                    <a href="#">美國寄宿中學</a>
+                </li>
+                <li>
+                    <a href="#">暑期課程</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <ul>
+                <li>相關資訊</li>
+                <li>
+                    <a href="#">所有活動</a>
+                </li>
+                <li>
+                    <a href="#">最新消息</a>
+                </li>
+                <li>
+                    <a href="#">留學心得</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div>
+            <ul>
+                <li>關於我們</li>
+                <li>
+                    <a href="#">我們的服務</a>
+                </li>
+                <li>
+                    <a href="#">關於UKiset</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <p style="color:#ccc; margin-top: 30px;">© 2017 UKEAS Boarding School. All rights reserved.</p>
+        <!-- <img src="./img/ukeas_white_logo.png" alt=""> -->
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
